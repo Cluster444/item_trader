@@ -9,3 +9,11 @@ gem 'coffee-script'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'therubyracer'
+
+group :test do
+  gem 'rspec-rails', '2.6.1.beta1'
+  gem 'spork', '0.9.0.rc8'
+  gem 'factory_girl_rails', :require => false
+  gem 'shoulda-matchers'
+  gem 'faker'
+end
