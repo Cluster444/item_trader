@@ -26,5 +26,6 @@ end
 Spork.each_run do
   require 'factories'
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+  ::ActiveSupport::Deprecation.silenced = true
 end
 
