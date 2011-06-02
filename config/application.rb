@@ -45,5 +45,9 @@ module ItemTrader
 
     # Enable the asset pipeline
     config.assets.enabled = true
+
+    config.generators do |g|
+      g.test_framework :rspec, :fixture => false, :views => false
+    end
   end
 end
