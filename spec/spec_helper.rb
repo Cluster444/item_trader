@@ -1,4 +1,5 @@
 require 'spork'
+require 'cover_me'
 
 Spork.prefork do
   ENV["RAILS_ENV"] ||= 'test'

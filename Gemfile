@@ -18,4 +18,5 @@ group :test do
   gem 'factory_girl_rails', :require => false
   gem 'shoulda-matchers'
   gem 'faker'
+  gem 'cover_me'
 end
