@@ -10,10 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110602061807) do
+ActiveRecord::Schema.define(:version => 20110602071437) do
 
   create_table "countries", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", :force => true do |t|
+    t.string   "name"
+    t.integer  "region_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20110602061807) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "location_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

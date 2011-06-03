@@ -7,3 +7,7 @@ Factory.define :user do |f|
   f.password '123456789'
   f.password_confirmation {|proxy| proxy.password}
 end
+
+Factory.define :user_with_location, :parent => :user do |f|
+  f.location { Factory(:location) }
+end
