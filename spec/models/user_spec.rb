@@ -7,6 +7,8 @@ describe User do
     it { should allow_mass_assignment_of(:password_confirmation) }
     it { should allow_mass_assignment_of(:remember_me) }
     it { should belong_to(:location) }
+    it { should have_one(:country).through(:location) }
+    it { should have_one(:region).through(:location) }
     it { should validate_presence_of(:email) }
     it { should validate_presence_of(:password) }
   end

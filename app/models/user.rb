@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
   belongs_to :location
+  has_one :region, :through => :location
+  has_one :country, :through => :location
 end
