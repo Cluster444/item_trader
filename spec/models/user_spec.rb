@@ -9,6 +9,7 @@ describe User do
     it { should belong_to(:location) }
     it { should have_one(:country).through(:location) }
     it { should have_one(:region).through(:location) }
+    it { should have_one(:inventory) }
     it { should validate_presence_of(:email) }
     it { should validate_presence_of(:password) }
   end
@@ -21,6 +22,13 @@ describe User do
         @user = Factory(:user_with_location)
         @user.location.should_not be_nil
       end
+    end
+  end
+
+  context '#create' do
+    it 'should create an inventory for the user' do
+      user = Factory(:user)
+      user.inventory.should_not be_nil
     end
   end
 end
